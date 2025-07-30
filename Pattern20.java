@@ -1,14 +1,28 @@
 class Solution {
-  public boolean isArmstrong(int n) {
-    int temp = n;
-    int r;
-    int numDigits = String.valueOf(n).length();
-    int sum = 0;
-    while (n > 0) {
-      r = n % 10;
-      sum += Math.pow(r, numDigits);;
-      n = n / 10;
+  public void pattern19(int n) {
+    for (int i = 0; i < n; i++) {
+      for (int j = 1; j <= n - i; j++) {
+        System.out.print("*");
+      }
+      for (int j = 0; j < 2 * i; j++) {
+        System.out.print(" ");
+      }
+      for (int j = 1; j <= n - i; j++) {
+        System.out.print("*");
+      }
+      System.out.println();
     }
-    return (temp == sum);
+    for (int i = 1; i <= n; i++) {
+      for (int j = 1; j <= i; j++) {
+        System.out.print("*");
+      }
+      for (int j = 0; j < 2 * (n - i); j++) {
+        System.out.print(" ");
+      }
+      for (int j = 1; j <= i; j++) {
+        System.out.print("*");
+      }
+      System.out.println();
+    }
   }
 }
